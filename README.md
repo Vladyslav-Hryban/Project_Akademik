@@ -2,8 +2,8 @@
   <h3>Członkowie zespołu:</h3>
   <h5>
   <br>Marharyta Martsulevich - Lider zespołu
-  <br>Vladyslav Hryban - członek zespołu (programista)
-  <br>Yelyzaveta Kovalchuk - członek zespołu (analityk)
+  <br>Vladyslav Hryban - Członek zespołu (programista)
+  <br>Yelyzaveta Kovalchuk - Członek zespołu (analityk)
   </h5>
   
   
