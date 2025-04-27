@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Studenta24 - Logowanie</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="LoginStyle.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar fade-in">
+    <a href="#">Strona główna</a> / Logowanie
+</div>
+
+<!-- Kontener logowania -->
+<div class="container-login">
+
+    <!-- Lewa część - formularz logowania -->
+    <div class="login-form fade-in">
+        <h2 class="text-center">Logowanie</h2>
+        <p class="welcome-text">Witamy w Domu Studenta24! Zaloguj się, aby kontynuować.</p>
+        <form>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Wprowadź swój email">
+            </div>
+
+            <div class="input-password-wrapper mb-3">
+                <label for="password" class="form-label">Hasło</label>
+                <input type="password" class="form-control" id="password" placeholder="Wprowadź hasło">
+                <i class="bi bi-eye toggle-password"></i>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Zaloguj się</button>
+            </div>
+
+            <div class="text-center">
+                <a href="#">Utwórz konto</a>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Prawa część - obrazek -->
+    <div class="login-image zoom-in"></div>
+
+</div>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Twój własny skrypt -->
+<script src="LoginLogic.js"></script>
+
+</body>
+</html>

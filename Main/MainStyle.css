@@ -1,0 +1,396 @@
+/* =========================== */
+/* GŁÓWNY STYL DLA STRONY GŁÓWNEJ I WSZYSTKICH STRON */
+/* =========================== */
+
+:root {
+  --primary-color: #76c8f2;
+  --inverted-color: #e48c62;
+  --background-gradient: linear-gradient(135deg, #76c8f2 0%, #e48c62 100%);
+  --light-color: #ffffff;
+  --dark-color: #2b2d42;
+}
+
+body {
+  background: var(--background-gradient);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.navbar .btn-primary,
+.navbar .btn-outline-primary {
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+.navbar .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.navbar .btn-outline-primary {
+  color: var(--inverted-color);
+  border-color: var(--inverted-color);
+}
+
+.navbar .btn-outline-primary:hover {
+  background-color: var(--inverted-color);
+  color: #fff;
+}
+#openSidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  width: 50px;
+  height: 50px;
+  background-color: #76c8f2;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#openSidebar:hover {
+  background-color: #e48c62;
+  transform: scale(1.1);
+}
+
+#openSidebar i {
+  font-size: 24px;
+  color: white;
+}
+
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: var(--light-color);
+  box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 500;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--dark-color);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 4rem;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: var(--inverted-color);
+  color: var(--light-color);
+  border-radius: 0.5rem;
+}
+
+.hero-section {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 2000px;
+  border-radius: 0 0 2rem 2rem;
+  text-align: center;
+}
+
+.slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slider-inner {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slider-image {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-section .container {
+  z-index: 2;
+}
+
+.hero-section .btn-light {
+  background-color: var(--inverted-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.hero-section .btn-light:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.features, .announcements, .gallery {
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.feature-item {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  background: var(--primary-color);
+  color: white;
+}
+
+.announcement-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.announcement-card:hover {
+  color: white;
+}
+
+.announcement-card:nth-child(odd):hover {
+  background: var(--primary-color);
+}
+
+.announcement-card:nth-child(even):hover {
+  background: var(--inverted-color);
+}
+
+
+.footer {
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 4rem 2rem;
+  margin-top: auto;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.footer h5 {
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Animacje fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMove 1s forwards;
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === Styl dla sekcji kalendarza === */
+.calendar-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+/* Styl dla samego kalendarza */
+#calendar {
+  background: #f8f9fa;
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width: 1200px; /* ширше */
+  aspect-ratio: 3/1; /* співвідношення ширина : висота */
+  margin: 0 auto;
+}
+
+
+/* Styl dla nagłówka kalendarza */
+.fc-toolbar-title {
+  color: #76c8f2;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/* Kolory dni tygodnia */
+.fc-col-header-cell {
+  background-color: #e6f4fa;
+  color: #2b2d42;
+  font-weight: 600;
+}
+
+/* Styl dla każdej komórki dnia */
+.fc-daygrid-day {
+  background-color: #f0f0f0; /* lekko szary dla kontrastu */
+  transition: background-color 0.3s;
+}
+
+/* Efekt najechania na dzień */
+.fc-daygrid-day:hover {
+  background-color: #dbeeff;
+}
+
+/* Styl dla przycisków kalendarza */
+.fc-button {
+  background-color: #76c8f2;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.fc-button-primary:hover {
+  background-color: #e48c62;
+  border: none;
+}
+
+/* Styl aktywnego dnia */
+.fc-day-today {
+  background-color: #cbeaff !important;
+}
+
+.footer {
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 3rem 1rem 1rem 1rem;
+  margin-top: auto;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.footer h5 {
+  color: var(--inverted-color);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--inverted-color);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logo-footer img {
+  border: 2px solid #ffffff;
+  padding: 5px;
+  background: #ffffff;
+}
+
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.features-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+}
