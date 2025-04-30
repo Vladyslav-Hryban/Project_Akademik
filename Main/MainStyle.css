@@ -1,6 +1,4 @@
-/* =========================== */
-/* GŁÓWNY STYL DLA STRONY GŁÓWNEJ I WSZYSTKICH STRON */
-/* =========================== */
+
 
 :root {
   --primary-color: #76c8f2;
@@ -253,7 +251,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Animacje fade-in */
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -266,7 +264,8 @@ body {
     transform: translateY(0);
   }
 }
-/* === Styl dla sekcji kalendarza === */
+
+
 .calendar-section {
   background: white;
   padding: 2rem;
@@ -276,43 +275,43 @@ body {
   max-width: 1200px;
 }
 
-/* Styl dla samego kalendarza */
+
 #calendar {
   background: #f8f9fa;
   border-radius: 1rem;
   padding: 1rem;
-  max-width: 1200px; /* ширше */
-  aspect-ratio: 3/1; /* співвідношення ширина : висота */
+  max-width: 1200px;
+  aspect-ratio: 3/1;
   margin: 0 auto;
 }
 
 
-/* Styl dla nagłówka kalendarza */
+
 .fc-toolbar-title {
   color: #76c8f2;
   font-weight: bold;
   font-size: 1.8rem;
 }
 
-/* Kolory dni tygodnia */
+
 .fc-col-header-cell {
   background-color: #e6f4fa;
   color: #2b2d42;
   font-weight: 600;
 }
 
-/* Styl dla każdej komórki dnia */
+
 .fc-daygrid-day {
-  background-color: #f0f0f0; /* lekko szary dla kontrastu */
+  background-color: #f0f0f0;
   transition: background-color 0.3s;
 }
 
-/* Efekt najechania na dzień */
+
 .fc-daygrid-day:hover {
   background-color: #dbeeff;
 }
 
-/* Styl dla przycisków kalendarza */
+
 .fc-button {
   background-color: #76c8f2;
   border: none;
@@ -325,7 +324,7 @@ body {
   border: none;
 }
 
-/* Styl aktywnego dnia */
+
 .fc-day-today {
   background-color: #cbeaff !important;
 }

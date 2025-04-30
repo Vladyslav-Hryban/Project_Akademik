@@ -1,0 +1,68 @@
+/* Styl ogólny dla strony Q&A */
+body {
+  background: linear-gradient(135deg, #76c8f2, #e48c62);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2, h4 {
+  color: #2b2d42;
+}
+
+.accordion-button {
+  background-color: #ffffff;
+  color: #2b2d42;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.accordion-button:hover {
+  background-color: #f1f9ff;
+}
+
+.accordion-body {
+  background-color: #f9f9f9;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.footer {
+  background: #76c8f2;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-top: auto;
+}
+
+/* Styl dla "sot" */
+.honeycomb {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  justify-items: center;
+}
+
+.honeycomb-tile {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.honeycomb-tile:hover {
+  background: linear-gradient(135deg, #76c8f2, #e48c62);
+  color: white;
+  transform: scale(1.05);
+}

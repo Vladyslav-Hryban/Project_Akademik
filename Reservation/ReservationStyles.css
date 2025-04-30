@@ -101,15 +101,30 @@ form button:hover {
   color: var(--dark-color);
 }
 
-/* Кнопка — трохи більша і з ефектом тіні */
 .reservation-form button {
-  font-size: 1.1rem;
-  padding: 0.75rem;
+  background: linear-gradient(135deg, #76c8f2, #e48c62);
+  border: none;
   border-radius: 2rem;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.5s ease, transform 0.3s ease;
 }
 
-/* Hover-ефект для кнопки */
 .reservation-form button:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(-135deg, #e48c62, #76c8f2);
+  transform: scale(1.05);
+}
+
+.reservation-form {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reservation-form.appear {
+  opacity: 1;
+  transform: translateY(0);
 }

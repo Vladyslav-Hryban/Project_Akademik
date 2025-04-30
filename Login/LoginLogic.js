@@ -1,4 +1,4 @@
-// Анімація елементів при завантаженні
+
 document.addEventListener("DOMContentLoaded", function() {
     const loginForm = document.querySelector(".login-form");
     const breadcrumbBar = document.querySelector(".breadcrumb-bar");
@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loginImage.classList.add("zoom-in");
 });
 
-// Валідація форми логіну
 const form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
     const email = document.getElementById("email");
@@ -23,7 +22,6 @@ form.addEventListener("submit", function(event) {
     }
 });
 
-// Показ/приховання пароля через іконку
 const passwordField = document.getElementById("password");
 const togglePassword = document.querySelector(".toggle-password");
 
@@ -39,7 +37,6 @@ togglePassword.addEventListener("click", function() {
     }
 });
 
-// Анімація кнопки при наведенні
 const loginButton = document.querySelector(".btn-primary");
 loginButton.addEventListener("mouseover", function() {
     loginButton.style.transform = "scale(1.05)";
