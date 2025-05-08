@@ -1,0 +1,135 @@
+/* Styl ogólny dla strony Ogłoszenia */
+body {
+  background: linear-gradient(135deg, #76c8f2, #e48c62);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #76c8f2;
+}
+
+.navbar-brand img {
+  margin-right: 0.5rem;
+}
+
+/* Styl burger buttona */
+#openSidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  width: 50px;
+  height: 50px;
+  background-color: #76c8f2;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#openSidebar:hover {
+  background-color: #e48c62;
+  transform: scale(1.1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  width: 250px;
+  background-color: #2b2d42;
+  padding: 2rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 1rem 0;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #76c8f2;
+}
+
+.announcements-section {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.announcement-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.announcement-card:hover {
+  background-color: #eaf7ff;
+  transform: translateY(-5px);
+}
+
+.announcement-card:nth-child(odd):hover {
+  background-color: #76c8f2;
+  color: white;
+}
+
+.announcement-card:nth-child(even):hover {
+  background-color: #e48c62;
+  color: white;
+}
+
+.announcement-card h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-card p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.footer {
+  background: #76c8f2;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-top: auto;
+}
+
+

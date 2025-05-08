@@ -93,7 +93,7 @@ body {
 
 .login-image {
     flex: 1;
-    background: url('SzczecinLogo.jpg') no-repeat center center;
+    background: url('Photos/SzczecinLogo.jpg') no-repeat center center;
     background-size: cover;
     border-left: 1px solid #dee2e6;
 }
