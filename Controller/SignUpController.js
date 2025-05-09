@@ -54,14 +54,52 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    // W przypadku sukcesu
+// Sprawdzenie czy regulamin został zaakceptowany
+    if (!terms.checked) {
+        event.preventDefault();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Proszę zaakceptować regulamin!'
+        });
+        return;
+    }
+
+// W przypadku sukcesu
     event.preventDefault();
-    Swal.fire({
-        icon: 'success',
-        title: 'Gotowe!',
-        text: 'Twoje konto zostało utworzone!'
-    });
-});
+
+    const formData = new FormData(form);
+
+    fetch('../signup.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.text())
+        .then(result => {
+            if (result === 'OK') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Gotowe!',
+                    text: 'Twoje konto zostało utworzone!'
+                });
+                form.reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Błąd!',
+                    text: result
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Błąd:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Błąd!',
+                text: 'Wystąpił problem z serwerem.'
+            });
+        });
+
 
 // Pokazywanie/ukrywanie hasła
 const passwordFields = document.querySelectorAll(".input-password-wrapper");

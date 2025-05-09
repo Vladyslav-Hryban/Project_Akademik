@@ -30,42 +30,42 @@
     <div class="login-form fade-in">
         <h2 class="text-center">Rejestracja</h2>
         <p class="welcome-text">Załóż konto w Domu Studenta24!</p>
-        <form>
+        <form id="registerForm">
 
             <div class="mb-3">
-                <label for="firstName" class="form-label">Imię</label>
+                <label for="firstName" name="firstName" class="form-label">Imię</label>
                 <input type="text" class="form-control" id="firstName" placeholder="Wprowadź swoje imię">
             </div>
 
             <div class="mb-3">
-                <label for="lastName" class="form-label">Nazwisko</label>
+                <label for="lastName" name="lastName" class="form-label">Nazwisko</label>
                 <input type="text" class="form-control" id="lastName" placeholder="Wprowadź swoje nazwisko">
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Wprowadź swój email">
+                <input type="email" class="form-control" id="email" placeholder="Wprowadź swój email" name="email">
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Numer telefonu</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Opcjonalnie: numer telefonu">
+                <input  type="tel" class="form-control" id="phone" name="phoneNumber" placeholder="Opcjonalnie: numer telefonu">
             </div>
 
             <div class="mb-3">
                 <label for="room" class="form-label">Numer pokoju</label>
-                <input type="text" class="form-control" id="room" placeholder="Podaj numer pokoju">
+                <input type="text" class="form-control" id="room" name="phoneNumber"placeholder="Podaj numer pokoju">
             </div>
 
             <div class="input-password-wrapper mb-3">
                 <label for="password" class="form-label">Hasło</label>
-                <input type="password" class="form-control" id="password" placeholder="Wprowadź hasło">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Wprowadź hasło">
                 <i class="bi bi-eye toggle-password"></i>
             </div>
 
             <div class="input-password-wrapper mb-3">
                 <label for="confirmPassword" class="form-label">Powtórz hasło</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Powtórz hasło">
+                <input type="password" class="form-control" id="confirmPassword" name="ConfirmPassword" placeholder="Powtórz hasło">
                 <i class="bi bi-eye toggle-password"></i>
             </div>
 
