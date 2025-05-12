@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 require_once __DIR__ . '/model/UserModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -29,5 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = new User();
     $success = $user->register($firstName, $lastName, $email, $password, $phone, $room);
 
-    echo $success ? 'OK' : 'Rejestracja nie powiodła się.';
+    if ($success) {
+        echo "OK";
+    } else {
+        echo "Rejestracja nie powiodła się. Sprawdź logi serwera (np. error_log).";
+    }
+
 }

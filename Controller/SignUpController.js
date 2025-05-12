@@ -1,17 +1,11 @@
-// Animacja elementów przy ładowaniu strony
-document.addEventListener("DOMContentLoaded", function() {
-    const registerForm = document.querySelector(".login-form");
-    const breadcrumbBar = document.querySelector(".breadcrumb-bar");
-    const loginImage = document.querySelector(".login-image");
 
-    registerForm.classList.add("fade-in");
-    breadcrumbBar.classList.add("fade-in");
-    loginImage.classList.add("zoom-in");
-});
 
-// Walidacja formularza rejestracji
+// Walidacja i wysyłanie danych
 const form = document.querySelector("form");
-form.addEventListener("submit", function(event) {
+
+form?.addEventListener("submit", function (event) {
+    event.preventDefault();
+
     const firstName = document.getElementById("firstName");
     const lastName = document.getElementById("lastName");
     const email = document.getElementById("email");
@@ -21,9 +15,8 @@ form.addEventListener("submit", function(event) {
     const confirmPassword = document.getElementById("confirmPassword");
     const terms = document.getElementById("terms");
 
-    // Sprawdzenie wymaganych pól
+    // Walidacja
     if (!firstName.value || !lastName.value || !email.value || !room.value || !password.value || !confirmPassword.value) {
-        event.preventDefault();
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -32,9 +25,7 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    // Sprawdzenie czy hasła się zgadzają
     if (password.value !== confirmPassword.value) {
-        event.preventDefault();
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -43,9 +34,7 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    // Sprawdzenie czy regulamin został zaakceptowany
     if (!terms.checked) {
-        event.preventDefault();
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -54,23 +43,17 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-// Sprawdzenie czy regulamin został zaakceptowany
-    if (!terms.checked) {
-        event.preventDefault();
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Proszę zaakceptować regulamin!'
-        });
-        return;
-    }
+    // Przygotowanie danych i wysyłka
+    const formData = new FormData();
+    formData.append('firstName', firstName.value.trim());
+    formData.append('lastName', lastName.value.trim());
+    formData.append('email', email.value.trim());
+    formData.append('phone', phone.value.trim());
+    formData.append('room', room.value.trim());
+    formData.append('password', password.value);
+    formData.append('confirmPassword', confirmPassword.value);
 
-// W przypadku sukcesu
-    event.preventDefault();
-
-    const formData = new FormData(form);
-
-    fetch('../signup.php', {
+    fetch('../../signup.php', {
         method: 'POST',
         body: formData
     })
@@ -99,24 +82,4 @@ form.addEventListener("submit", function(event) {
                 text: 'Wystąpił problem z serwerem.'
             });
         });
-
-
-// Pokazywanie/ukrywanie hasła
-const passwordFields = document.querySelectorAll(".input-password-wrapper");
-
-passwordFields.forEach(wrapper => {
-    const input = wrapper.querySelector("input");
-    const toggle = wrapper.querySelector(".toggle-password");
-
-    toggle.addEventListener("click", function() {
-        if (input.type === "password") {
-            input.type = "text";
-            toggle.classList.remove("bi-eye");
-            toggle.classList.add("bi-eye-slash");
-        } else {
-            input.type = "password";
-            toggle.classList.remove("bi-eye-slash");
-            toggle.classList.add("bi-eye");
-        }
-    });
 });

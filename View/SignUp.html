@@ -88,7 +88,38 @@
     </div>
 
 </div>
+<script>
+    // Animacja elementów przy ładowaniu strony
+    document.addEventListener("DOMContentLoaded", function () {
+        const registerForm = document.querySelector(".login-form");
+        const breadcrumbBar = document.querySelector(".breadcrumb-bar");
+        const loginImage = document.querySelector(".login-image");
 
+        registerForm?.classList.add("fade-in");
+        breadcrumbBar?.classList.add("fade-in");
+        loginImage?.classList.add("zoom-in");
+
+        // Pokazywanie/ukrywanie hasła (działa od razu po załadowaniu strony)
+        const passwordFields = document.querySelectorAll(".input-password-wrapper");
+        passwordFields.forEach(wrapper => {
+            const input = wrapper.querySelector("input");
+            const toggle = wrapper.querySelector(".toggle-password");
+
+            toggle.addEventListener("click", function () {
+                if (input.type === "password") {
+                    input.type = "text";
+                    toggle.classList.remove("bi-eye");
+                    toggle.classList.add("bi-eye-slash");
+                } else {
+                    input.type = "password";
+                    toggle.classList.remove("bi-eye-slash");
+                    toggle.classList.add("bi-eye");
+                }
+            });
+        });
+    });
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../Controller/SignUpController.js"></script>
 </body>
